@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     fun save(saveData:String?){
         try {
             val path = Environment.getExternalStorageDirectory()
-            val directory = File(path,"SimpleNote")
+            val directory = File(path,"SimpleNotepad")
             directory.mkdirs()
             val fileout = File(directory,"SimpleNote.txt")
             fileout.createNewFile()
