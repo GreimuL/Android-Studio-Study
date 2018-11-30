@@ -13,4 +13,10 @@ You can save graph data and load data.(\0\DFSBFSSimulator\GraphData.txt)
   
   
 TODO: add delay between step and step to show progression of BFS or DFS  
-(Maybe use Coroutine?)  
+(Maybe use Coroutine?)
+
+#3. Data Binding Study
+--------------------------------------
+Implement data binding in 2 ways
+When you enter the string in TextEditor, then TextField changed in real time.
+Buttons don't have any functions.
