@@ -18,5 +18,5 @@ TODO: add delay between step and step to show progression of BFS or DFS
 #3. Data Binding Study
 --------------------------------------
 Implement data binding in 2 ways.  
-When you enter the string in TextEditor, then TextField change in real time.  
+If you enter a string in 'TextEditor', 'TextField' is updated  in real time
 Buttons don't have any functions.  
