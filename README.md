@@ -23,7 +23,6 @@ Buttons don't have any functions.
 
 #4. Simple Timer
 --------------------------------------
-Simple Timer for Thread Study  
 Implemented with Thread and Handler  
 
 START: Start timer  
