@@ -20,3 +20,13 @@ TODO: add delay between step and step to show progression of BFS or DFS
 Implement data binding in 2 ways.  
 If you enter a string in 'TextEditor', 'TextField' is updated  in real time
 Buttons don't have any functions.  
+
+#4. Simple Timer
+--------------------------------------
+Simple Timer for Thread Study  
+
+START: Start timer  
+STOP: Stop timer  
+LAP: Record current time in a TextView  
+RESET: Reset All  
+
