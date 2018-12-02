@@ -1,20 +1,17 @@
 package com.example.greimul.simpledfsbfssimulator
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Message
+import android.os.SystemClock
 import android.support.v7.app.AppCompatActivity
-import android.text.style.UpdateAppearance
-import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_graph.*
-import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
-import kotlin.concurrent.schedule
-import kotlin.coroutines.coroutineContext
+
 
 class GraphActivity:AppCompatActivity(){
 
@@ -26,28 +23,78 @@ class GraphActivity:AppCompatActivity(){
     var cnt:Int = 0
     var startX:Int = -1
     var startY:Int = -1
+
+    var stackX:Deque<Int> = ArrayDeque<Int>()
+    var stackY:Deque<Int> = ArrayDeque<Int>()
+
+    var queueX: Queue<Int> = ArrayDeque<Int>()
+    var queueY: Queue<Int> = ArrayDeque<Int>()
+    var dx = arrayListOf<Int>(0,0,-1,1)
+    var dy = arrayListOf<Int>(-1,1,0,0)
+
+    var mHandler:ViewHandler =ViewHandler()
+
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_graph)
         var intent:Intent = getIntent()
         graphString = intent.getStringExtra("Data")
         chararr = graphString!!.toCharArray()
-        showgraph()
         makematrix()
+        graphView.setText(chararr!!.joinToString(""))
         dfs.setOnClickListener{
             Toast.makeText(this,"DFS Start $startX $startY",Toast.LENGTH_SHORT).show()
-            DFS(startX,startY)
-            showgraph()
+            stackX.push(startX)
+            stackY.push(startY)
+            var dfsThread = DFS()
+            dfsThread.start()
         }
         bfs.setOnClickListener{
             Toast.makeText(this,"BFS Start $startX $startY",Toast.LENGTH_SHORT).show()
-            var queueX: Queue<Int> = ArrayDeque<Int>()
-            var queueY: Queue<Int> = ArrayDeque<Int>()
-            var dx = arrayListOf<Int>(0,0,-1,1)
-            var dy = arrayListOf<Int>(-1,1,0,0)
             queueX.add(startX)
             queueY.add(startY)
+            var bfsThread = BFS()
+            bfsThread.start()
+
+        }
+        back.setOnClickListener{finish()}
+    }
+    inner class DFS():Thread(){
+        override fun run(){
+            while(stackX.peek()!=null) {
+                var x:Int = stackX.peek()
+                var y:Int = stackY.peek()
+                var find:Boolean = false
+                mHandler?.sendEmptyMessage(0)
+                SystemClock.sleep(50)
+                for (i in 0..3) {
+                    var nex: Int = x + dx[i]
+                    var ney: Int = y + dy[i]
+                    if (nex < 0 || ney < 0 || nex >= width || ney >= height) {
+                        continue
+                    }
+                    if (grapharr[nex][ney] == '0') {
+                        grapharr[nex][ney] = '1'
+                        chararr!![ney * (width + 1) + nex] = '1'
+                        find = true
+                        stackX.push(nex)
+                        stackY.push(ney)
+                        break
+                    }
+                }
+                if(!find){
+                    stackX.pop()
+                    stackY.pop()
+                }
+            }
+            mHandler?.sendEmptyMessage(1)
+        }
+    }
+    inner class BFS():Thread(){
+        override fun run(){
             while(queueX.peek()!=null){
+                mHandler?.sendEmptyMessage(0)
+                SystemClock.sleep(50)
                 var nowx:Int = queueX.peek()
                 var nowy:Int = queueY.peek()
                 queueX.remove()
@@ -65,29 +112,24 @@ class GraphActivity:AppCompatActivity(){
                         chararr!![ney * (width + 1) + nex] = '1'
                     }
                 }
-                showgraph()
+            }
+            mHandler.sendEmptyMessage(1)
+        }
+    }
+    inner class ViewHandler:Handler(){
+        override fun handleMessage(msg: Message?) {
+            super.handleMessage(msg)
+            if(msg?.what == 0) {
+                graphView.setText(chararr!!.joinToString(""))
+            }
+            else{
+                graphView.setText(chararr!!.joinToString(""))
+                showFinishToast()
             }
         }
-        back.setOnClickListener{finish()}
     }
-    fun showgraph(){
-        graphView.setText(chararr!!.joinToString(""))
-    }
-    fun DFS(x:Int,y:Int){
-        var dx = arrayListOf<Int>(0,0,-1,1)
-        var dy = arrayListOf<Int>(-1,1,0,0)
-        for(i in 0..3) {
-            var nex: Int = x + dx[i]
-            var ney: Int = y + dy[i]
-            if (nex < 0 || ney < 0 || nex >= width || ney >= height) {
-                continue
-            }
-            if (grapharr[nex][ney] == '0') {
-                grapharr[nex][ney] = '1'
-                chararr!![ney * (width + 1) + nex] = '1'
-                DFS(nex,ney)
-            }
-        }
+    fun showFinishToast(){
+        Toast.makeText(this,"Finish",Toast.LENGTH_SHORT).show()
     }
     fun makematrix(){
         for(i in 0..(graphString!!.length-1)){
@@ -120,7 +162,6 @@ class GraphActivity:AppCompatActivity(){
             Toast.makeText(this,"There isn't Start point",Toast.LENGTH_SHORT).show()
             finish()
         }
-
     }
 
 }
