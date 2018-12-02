@@ -11,9 +11,11 @@ Execute DFS or BFS at adjacency matrix and fill with '1'.
 You can save graph data and load data.(\0\DFSBFSSimulator\GraphData.txt)  
 (input form: 0=can go, 2= start point, other character= can't go)  
   
+~~TODO: add delay between step and step to show progression of BFS or DFS~~  
+~~(Maybe use Coroutine?)~~
   
-TODO: add delay between step and step to show progression of BFS or DFS  
-(Maybe use Coroutine?)
+Modify 'Simple DFS BFS Simulator' to show dfs and bfs step by step.  
+Implemented with Thread and Handler  
 
 #3. Data Binding Study
 --------------------------------------
