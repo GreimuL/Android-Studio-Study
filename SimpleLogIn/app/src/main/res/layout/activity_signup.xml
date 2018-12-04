@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/dummy3" android:layout_weight="1"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_weight="1.5">
+        <TextView
+                android:text="ID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textID" android:layout_weight="5"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:id="@+id/signUpID" android:layout_weight="2" android:inputType="text"/>
+        <Button
+                android:text="Check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/checkDupli" android:layout_weight="4"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_weight="1.5">
+        <TextView
+                android:text="PW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textPW" android:layout_weight="5"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/signUpPW" android:layout_weight="2"/>
+        <CheckBox
+                android:text="Show PW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/checkBox2" android:layout_weight="4"/>
+    </LinearLayout>
+    <Button
+            android:text="Sign Up"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/signUpCheck" android:layout_weight="1.5"/>
+    <Button
+            android:text="BACK"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/backBt" android:layout_weight="1.5"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/dummy4" android:layout_weight="1.5"/>
+</LinearLayout>
