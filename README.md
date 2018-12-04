@@ -34,4 +34,6 @@ START: Start timer
 STOP: Stop timer  
 LAP: Record current time in a TextView  
 RESET: Reset All  
-
+#5. Simple Login Form (Not finish)
+---------------------------------------
+Update soon...
