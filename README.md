@@ -35,6 +35,9 @@ STOP: Stop timer
 LAP: Record current time in a TextView  
 RESET: Reset All   
 
-#5. Simple Login Form (Not finish)
----------------------------------------
-Update soon...
+#5. Simple Login Form
+---------------------------------------  
+After registing your account, you can log in to your account.
+Account data will save as AccountData.txt in \0\SimpleLogin  
+
+TODO: encrypt AccountData
