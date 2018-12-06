@@ -31,8 +31,13 @@ class SignUpActivity:AppCompatActivity() {
         accountData = getfile.readLines()
         checkDupli.setOnClickListener{
             var checkD:Boolean = true
+            if(signUpID.text.toString()==""){
+                Toast.makeText(this,"Please write ID",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             accountData.forEach{
-                if(it==signUpID.text.toString()){
+                val (dataID,dataPW) = it.split(' ')
+                if(dataID==signUpID.text.toString()){
                     checkD = false
                 }
             }
@@ -45,11 +50,15 @@ class SignUpActivity:AppCompatActivity() {
             }
         }
         signUpCheck.setOnClickListener{
+            if(signUpPW.text.toString()==""){
+                Toast.makeText(this,"Please write PW",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             if(idCheck == false){
                 Toast.makeText(this,"Please, ID Check First",Toast.LENGTH_SHORT).show()
             }
             else {
-                getfile.appendText(signUpID.text.toString()+"\n")
+                getfile.appendText(signUpID.text.toString()+' '+signUpPW.text.toString()+"\n")
                 Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

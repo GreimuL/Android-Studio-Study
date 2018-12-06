@@ -37,7 +37,24 @@ class MainActivity : AppCompatActivity() {
         init()
         loadAccount()
         logIn.setOnClickListener {
-
+            accountData.forEach {
+                val (dataID,dataPW) =  it.split(' ')
+                if(dataID == idInput.text.toString()){
+                    if(dataPW == pwInput.text.toString()){
+                        Toast.makeText(this, "Login success", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this,LoginActivity::class.java)
+                        intent.putExtra("ID",idInput.text.toString())
+                        startActivity(intent)
+                        finish()
+                        return@setOnClickListener
+                    }
+                    else{
+                        Toast.makeText(this, "Please check your id/pw", Toast.LENGTH_SHORT).show()
+                        return@setOnClickListener
+                    }
+                }
+            }
+            Toast.makeText(this, "Please check your id/pw", Toast.LENGTH_SHORT).show()
         }
         signUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
@@ -76,7 +93,7 @@ class MainActivity : AppCompatActivity() {
     fun loadAccount(){
         try {
             accountData = getfile.readLines()
-            Toast.makeText(this, "AccountData load Success", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "AccountData load Success", Toast.LENGTH_SHORT).show()
         }
         catch(e:Exception){
             Toast.makeText(this, "AccountData load Failed\nPlease allow permission\nAnd restart app", Toast.LENGTH_LONG).show()
