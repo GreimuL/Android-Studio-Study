@@ -40,4 +40,11 @@ RESET: Reset All
 After registing your account, you can log in to your account.  
 Account data will save as AccountData.txt in \0\SimpleLogin  
 
-TODO: encrypt AccountData
+TODO: encrypt AccountData   
+
+#6. Simple Number Converter
+---------------------------------------  
+Implemented with TextChangedListener.  
+First, choose radix that you want to write.   
+When you write number, it converts number (Binary<->Decimal<->Hexadecimal) instantly.  
+If you write wrong number, it displays "Invalid Data".  
