@@ -28,6 +28,7 @@ class SignUpActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
+        val enCry = AccountEncrypt()
         accountData = getfile.readLines()
         checkDupli.setOnClickListener{
             var checkD:Boolean = true
@@ -37,7 +38,7 @@ class SignUpActivity:AppCompatActivity() {
             }
             accountData.forEach{
                 val (dataID,dataPW) = it.split(' ')
-                if(dataID==signUpID.text.toString()){
+                if(dataID==enCry.encrypt(signUpID.text.toString())){
                     checkD = false
                 }
             }
@@ -58,7 +59,7 @@ class SignUpActivity:AppCompatActivity() {
                 Toast.makeText(this,"Please, ID Check First",Toast.LENGTH_SHORT).show()
             }
             else {
-                getfile.appendText(signUpID.text.toString()+' '+signUpPW.text.toString()+"\n")
+                getfile.appendText(enCry.encrypt(signUpID.text.toString())+' '+enCry.encrypt(signUpPW.text.toString())+'\n')
                 Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

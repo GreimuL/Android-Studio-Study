@@ -36,11 +36,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         init()
         loadAccount()
+        val enCry = AccountEncrypt()
         logIn.setOnClickListener {
             accountData.forEach {
                 val (dataID,dataPW) =  it.split(' ')
-                if(dataID == idInput.text.toString()){
-                    if(dataPW == pwInput.text.toString()){
+                if(dataID == enCry.encrypt(idInput.text.toString())){
+                    if(dataPW == enCry.encrypt(pwInput.text.toString())){
                         Toast.makeText(this, "Login success", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this,LoginActivity::class.java)
                         intent.putExtra("ID",idInput.text.toString())
