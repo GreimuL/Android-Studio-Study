@@ -41,7 +41,7 @@ After registing your account, you can log in to your account.
 Account data will save as AccountData.txt in \0\SimpleLogin  
 
 ~~TODO: encrypt AccountData~~  
-Encrypt AccountData by "Cipher" class
+Encrypt AccountData by "javax.crypto.Cipher" class
 
 #6. Simple Number Converter
 ---------------------------------------  
