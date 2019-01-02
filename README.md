@@ -48,4 +48,8 @@ Encrypt AccountData by "javax.crypto.Cipher" class
 Implemented with TextChangedListener.  
 First, choose radix that you want to write.   
 When you write number, it converts number (Binary<->Decimal<->Hexadecimal) instantly.  
-If you write wrong number, it displays "Invalid Data".  
+If you write wrong number, it displays "Invalid Data".   
+
+#7. TabLayout
+---------------------------------------
+Implement Tab UI using Tablayout and ViewPager
