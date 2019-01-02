@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
         tablayout.addTab(tablayout.newTab().setText("page1"))
         tablayout.addTab(tablayout.newTab().setText("page2"))
         tablayout.addTab(tablayout.newTab().setText("page3"))
