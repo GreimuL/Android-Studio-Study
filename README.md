@@ -21,7 +21,8 @@ If input graph data is one line, you must put '\n'(it means just Enter) to end o
 Modify 'Simple DFS BFS Simulator' to show dfs and bfs step by step.  
 Implemented with Thread and Handler  
 
-<img src="./000Screenshots/dfsbfssimulator/dfsbfssimulator.jpg" width="30%" height="30%"><img src="./000Screenshots/dfsbfssimulator/dfsbfssimulator2.jpg" width="30%" height="30%">
+<img src="./000Screenshots/dfsbfssimulator/dfsbfssimulator.jpg" width="30%" height="30%"><img src="./000Screenshots/dfsbfssimulator/dfsbfssimulator2.jpg" width="30%" height="30%">  
+
 <img src="./000Screenshots/dfsbfssimulator/dfsgif.gif" width="30%" height="30%"><img src="./000Screenshots/dfsbfssimulator/dfsgif.gif" width="30%" height="30%">  
 
 
