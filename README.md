@@ -23,7 +23,9 @@ Implemented with Thread and Handler
 
 <img src="./000Screenshots/dfsbfssimulator/dfsbfssimulator.jpg" width="30%" height="30%"><img src="./000Screenshots/dfsbfssimulator/dfsbfssimulator2.jpg" width="30%" height="30%">  
 
-<img src="./000Screenshots/dfsbfssimulator/dfsgif.gif" width="30%" height="30%"><img src="./000Screenshots/dfsbfssimulator/dfsgif.gif" width="30%" height="30%">  
+Execute DFS and BFS  
+
+<img src="./000Screenshots/dfsbfssimulator/dfsgif.gif" width="30%" height="30%"><img src="./000Screenshots/dfsbfssimulator/bfsgif.gif" width="30%" height="30%">  
 
 
 #3. Data Binding Study
@@ -55,7 +57,9 @@ Encrypt AccountData by "javax.crypto.Cipher" class
 
 <img src="./000Screenshots/login/login.jpg" width="30%" height="30%"><img src="./000Screenshots/login/login2.jpg" width="30%" height="30%"><img src="./000Screenshots/login/login3.jpg" width="30%" height="30%">  
 
-<img src="./000Screenshots/login/login4.PNG" width="30%" height="30%">
+Encrypted Data  
+
+<img src="./000Screenshots/login/login4.PNG" width="100%" height="100%">
 
 #6. Simple Number Converter
 ---------------------------------------  
