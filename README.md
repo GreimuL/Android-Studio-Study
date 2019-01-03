@@ -21,10 +21,10 @@ If input graph data is one line, you must put '\n'(it means just Enter) to end o
 Modify 'Simple DFS BFS Simulator' to show dfs and bfs step by step.  
 Implemented with Thread and Handler  
 
-<img src="./000Screenshots/dfsbfssimulator/dfsbfssimulator.jpg" width="30%" height="30%">
-<img src="./000Screenshots/dfsbfssimulator/dfsbfssimulator2.jpg" width="30%" height="30%">
-<img src="./000Screenshots/dfsbfssimulator/dfsgif.gif" width="30%" height="30%">
-<img src="./000Screenshots/dfsbfssimulator/dfsgif.gif" width="30%" height="30%">
+<img src="./000Screenshots/dfsbfssimulator/dfsbfssimulator.jpg" width="30%" height="30%"><img src="./000Screenshots/dfsbfssimulator/dfsbfssimulator2.jpg" width="30%" height="30%">
+<img src="./000Screenshots/dfsbfssimulator/dfsgif.gif" width="30%" height="30%"><img src="./000Screenshots/dfsbfssimulator/dfsgif.gif" width="30%" height="30%">  
+
+
 #3. Data Binding Study
 --------------------------------------
 Implement data binding in 2 ways.  
@@ -52,9 +52,7 @@ Account data will save as AccountData.txt in \0\SimpleLogin
 ~~TODO: encrypt AccountData~~  
 Encrypt AccountData by "javax.crypto.Cipher" class  
 
-<img src="./000Screenshots/login/login.jpg" width="30%" height="30%">
-<img src="./000Screenshots/login/login2.jpg" width="30%" height="30%">
-<img src="./000Screenshots/login/login3.jpg" width="30%" height="30%">  
+<img src="./000Screenshots/login/login.jpg" width="30%" height="30%"><img src="./000Screenshots/login/login2.jpg" width="30%" height="30%"><img src="./000Screenshots/login/login3.jpg" width="30%" height="30%">  
 
 <img src="./000Screenshots/login/login4.PNG" width="30%" height="30%">
 
@@ -65,9 +63,7 @@ First, choose radix that you want to write.
 When you write number, it converts number (Binary<->Decimal<->Hexadecimal) instantly.  
 If you write wrong number, it displays "Invalid Data".   
 
-<img src="./000Screenshots/numberconverter/converter.jpg" width="30%" height="30%">
-<img src="./000Screenshots/numberconverter/converter2.jpg" width="30%" height="30%">
-<img src="./000Screenshots/numberconverter/converter3.jpg" width="30%" height="30%">
+<img src="./000Screenshots/numberconverter/converter.jpg" width="30%" height="30%"><img src="./000Screenshots/numberconverter/converter2.jpg" width="30%" height="30%"><img src="./000Screenshots/numberconverter/converter3.jpg" width="30%" height="30%">
 
 #7. TabLayout
 ---------------------------------------
